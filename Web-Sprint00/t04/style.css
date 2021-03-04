@@ -1,0 +1,50 @@
+.content {
+    display: flex; 
+    flex-flow: row wrap;
+    margin: 25px;
+}
+.capitan, .ironman, .widow, .spider {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+    height: 140px;
+    width: 270px;
+    background: linear-gradient(#4568DC, #B06AB3);
+    margin: 25px;
+    padding: 10px;
+}
+.capitan {
+    background: linear-gradient(#4568DC, #B06AB3);
+}
+.ironman {
+    background: linear-gradient(#e52d27, #b31217);
+}
+.widow {
+    background: linear-gradient(to right, #000, #61045F);
+}
+.spider {
+    background: linear-gradient(#e52d27, #000);
+}
+.text {
+    text-align: right;
+    font-family: Verdana;
+}
+.alias{
+    color: white;
+    font-size: 12px;
+    margin-top: -5px;
+    margin-bottom: -8px;
+}
+.name {
+    color: rgba(255, 255,255, 0.5);
+    font-size: 9px;
+}
+.image {
+    height: 182px;
+    margin-top: -32px;
+}
+.imagespider {
+    height: 182px;
+    margin-top: -10px;
+}

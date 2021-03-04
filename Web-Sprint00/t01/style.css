@@ -1,0 +1,61 @@
+table {
+  border-collapse: collapse;
+}
+.top {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+}
+.name {
+  border: 2px solid lightgray;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+}
+.color {
+  border: 2px solid lightgray;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+}
+.power {
+  border: 2px solid lightgray;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+}
+.imagebody {
+  border: 2px solid lightgray;
+  border-collapse: collapse;
+}
+.image {
+  border-radius: 25px;
+  height: 120px;
+  width: 120px;
+  margin: 10px;
+}
+#soul {
+  background-color: #D6923E;
+}
+#time {
+  background-color: #028001;
+}
+#space {
+  background-color: #005792;
+}
+#mind {
+  background-color: #FEFF03;
+}
+#reality {
+  background-color: #C12B2F;
+}
+#power {
+  background-color: #8175B7;
+}
+#bot {
+  border: 2px solid lightgray;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 10px;
+}

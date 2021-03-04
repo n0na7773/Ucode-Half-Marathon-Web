@@ -1,0 +1,11 @@
+h1 {
+    background-color: #EC3324;
+    font-family: Verdana;
+    font-size: 4em;
+    text-align: center;
+    color: white; 
+}
+span {
+    top: 15px;
+    position: relative;
+}
