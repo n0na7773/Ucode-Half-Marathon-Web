@@ -1,0 +1,79 @@
+body {
+    background: linear-gradient(90deg, rgba(101,47,0,1) 0%, rgba(117,0,4,1) 33%, rgba(92,14,98,1) 66%, rgba(13,0,54,1) 100%);
+}
+h1 {
+    background: darkslateblue;
+    font-family: Verdana;
+    font-size: 2em;
+    text-align: center;
+    color: white; 
+}
+.menus {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: calc(50vw - 242px);
+}
+/* Dropdown Button */
+.dropbutton1 {
+    background-color: #EC3324;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid white;
+    width: 120px;
+}
+.dropbutton2 {
+    background-color: #EC3324;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid white;
+    width: 120px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.lvl1-content {
+    position: relative;
+    display: inline-block;
+    margin: 0 61px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.lvl2-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.lvl3-content{
+    display: none;
+    position: absolute;
+    background-color: grey;
+    margin-top: -52px;
+    left: 120px;
+    border: 1px solid white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 120px;
+}
+/* Links inside the dropdown */
+.lvl3-content a {
+    display: block;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    
+    text-decoration: none;
+}
+
+/* Change color of dropdown links on hover */
+.lvl2-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.lvl1-content:hover .lvl2-content {display: block;}
+
+.lvl2-1-content:hover .lvl3-content, .lvl2-2-content:hover .lvl3-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.lvl1-content:hover .dropbutton1, .lvl2-1-content:hover .dropbutton2, .lvl2-2-content:hover .dropbutton2 {background-color: #3e8e41;}

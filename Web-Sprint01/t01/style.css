@@ -1,0 +1,10 @@
+.image {
+    position: absolute;
+    top: calc(50vh - 95.25px);
+    left: calc(50vw - 150px);
+}
+.image:hover {
+    cursor: default;
+    transform: rotate(-30deg);
+    transition: all 0.3s ease-in-out 0s;
+}

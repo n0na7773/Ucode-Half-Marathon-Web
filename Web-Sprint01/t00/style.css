@@ -1,0 +1,15 @@
+@media screen {
+    .pepe {
+        width: auto;
+        height: 300px;
+        float: left;
+        margin-right: 10px;
+    }
+}
+@media print {
+    .pepe {
+        width: auto;
+        height: 300px;
+    }
+  
+}
