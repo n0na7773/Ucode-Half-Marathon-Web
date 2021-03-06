@@ -1,0 +1,45 @@
+.name {
+    background: darkslateblue;
+    font-family: Verdana;
+    font-size: 2em;
+    text-align: center;
+    color: white; 
+}
+.topic {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    border: 2px solid silver;
+    padding: 15px;
+}
+.subtopic {
+    border: 1px solid silver;
+    margin: 10px;
+    padding: 15px;
+}
+p {
+    margin: 0px;
+}
+.tag {
+    font-size: 18px;
+    font-style: italic;
+}
+.code {
+    color: gray;
+    font-size: 14px;
+}
+@media (min-width: 1024px) {
+    .subtopic {
+        flex: 0 0 19%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .subtopic {
+        flex: 0 0 42%;
+    }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+    .subtopic {
+        flex: 0 0 89%;
+    }
+}

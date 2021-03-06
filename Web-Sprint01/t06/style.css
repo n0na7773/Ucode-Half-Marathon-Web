@@ -1,0 +1,101 @@
+h1 {
+    margin: 15px;
+    margin-top: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+label {
+    align-self: center;
+    padding: 0px 15px 0px 25px;
+}
+.req_text {
+    color: palevioletred;
+}
+.help_text {
+    text-align: center;
+    color: darkslategray;
+}
+.todo {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.row3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.job {
+    display: flex;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 25px;
+    margin: 15px;
+    padding: 5px;
+}
+.sign {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.row2-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.row2-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.row2-3{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+    height: 80px;
+    
+}
+.enter {
+    display: flex;
+    flex-grow: 1;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: gray;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid lightgray;
+    margin: 15px;
+}
+.send {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    background-color: palevioletred;
+    border: 0px;
+    margin: 15px;
+    height: 50px;
+    text-align: center;
+
+}
+input{ 
+    box-sizing: border-box; 
+    height: 2em; 
+    padding: 0px 10px; 
+}
