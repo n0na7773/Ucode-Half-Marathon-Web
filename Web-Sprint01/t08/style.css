@@ -1,0 +1,38 @@
+body {
+    margin:0px;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    background: green;
+    border-radius: 50%;
+    animation-duration: 10s;
+    animation-direction: linear;
+    animation-iteration-count: infinite;
+    animation-name: slidein;
+}
+.circle:hover {
+    transition: 2s;
+    background-color: red;
+  }
+@keyframes slidein {
+    0% {
+        margin-left: 0;
+        animation-timing-function: ease-in;
+    }
+    25% {
+        margin-left: calc(50vw - 100px);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        margin-left: calc(100vw - 100px);
+        animation-timing-function: ease-in;
+    }
+    75% {
+        margin-left: calc(50vw - 100px);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        margin-left: 0;
+    }
+}

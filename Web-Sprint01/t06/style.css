@@ -1,3 +1,6 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
 h1 {
     margin: 15px;
     margin-top: 25px;
@@ -37,10 +40,27 @@ label {
 .job {
     display: flex;
     color: gray;
+    margin: 15px;
+}
+.job input[type="checkbox"] {
+    opacity: 0;
+}
+.job input[type="checkbox"]:checked + label {
+    background-color: darkslateblue;
+    color: white;
+    padding: 15px 20px;
+}
+.job input[type="checkbox"]:checked + label:after {
+    content: "\00a0\00a0\00a0\2713";
+    color: white;
+
+}
+.job label {
+    font-size: 14px;
+    margin: 5px;
+    padding:  15px 25px;
     border: 1px solid gray;
     border-radius: 25px;
-    margin: 15px;
-    padding: 5px;
 }
 .sign {
     display: flex;
@@ -92,7 +112,11 @@ label {
     margin: 15px;
     height: 50px;
     text-align: center;
-
+    transition: all 1s ease-in-out 0s; /*imba*/
+}
+.send:hover {
+    background-color: darkslateblue;
+    transition: all 1s ease-in-out 0s;
 }
 input{ 
     box-sizing: border-box; 

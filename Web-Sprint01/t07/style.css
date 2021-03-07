@@ -1,0 +1,491 @@
+body {
+    height:100vh;
+
+    margin: 0;
+    font-family:'Gill Sans',  sans-serif;
+}
+a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin: 16px 8px;
+}
+p {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin: 16px 8px;
+}
+.header {
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    background-color: darkolivegreen;
+    padding:5px 10px;
+    max-height: 90.68px;
+}
+.search {
+    font-family:'Gill Sans',  sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+    width: 100px;
+    background: transparent;
+    border: 0;
+    color: white;
+    margin: 0px 8px;
+}
+.search:focus {
+    outline: none;
+    text-decoration: underline;
+}
+.search::placeholder {
+    color: white;
+}
+.search:focus::placeholder {
+    color: transparent;
+    
+}
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+    margin: 0px;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+display: inline;
+font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+padding: 8px;
+color: black;
+content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+color: darkolivegreen;
+text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+color: darkgreen;
+text-decoration: underline;
+}
+.catal_name {
+    color: black;
+    font-size: 28px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+}
+.filter_row1 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+}
+.job {
+    display: flex;
+    color: gray;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.job input[type="checkbox"] {
+    opacity: 0;
+    box-sizing: border-box; 
+    height: 2em; 
+    padding: 0px 10px; 
+}
+.job input[type="checkbox"]:checked + label {
+    background-color: darkslateblue;
+    color: white;
+    padding: 10px 20px;
+}
+.job input[type="checkbox"]:checked + label:after {
+    content: "\00a0\00a0\00a0\2713";
+    color: white;
+}
+.job label {
+    font-size: 14px;
+    margin: 5px;
+    padding: 10px 20px;
+    border: 1px solid gray;
+    border-radius: 25px;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.filter {
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 300px;
+    padding: 30px;
+    padding-top: 15px;
+}
+    .checkbox {
+        width: 100%;
+        margin: 5px auto;
+        position: relative;
+        display: block;
+    }
+
+    .checkbox input[type="checkbox"] {
+        width: auto;
+        opacity: 0.00000001;
+        position: absolute;
+        left: 0;
+        margin-left: -20px;
+    }
+    .checkbox label {
+        position: relative;
+    }
+    .checkbox label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 4px;
+        width: 22px;
+        height: 22px;
+        transition: transform 0.28s ease;
+        border-radius: 3px;
+        border: 2px solid gray;
+    }
+    .checkbox label:after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 5px;
+        border-bottom: 2px solid darkolivegreen;
+        border-left: 2px solid darkolivegreen;
+        -webkit-transform: rotate(-45deg) scale(0);
+        transform: rotate(-45deg) scale(0);
+        transition: transform ease 0.25s;
+        will-change: transform;
+        position: absolute;
+        top: 12px;
+        left: 10px;
+    }
+    .checkbox input[type="checkbox"]:checked ~ label::before {
+        color: #7bbe72;
+    }
+
+    .checkbox input[type="checkbox"]:checked ~ label::after {
+        -webkit-transform: rotate(-45deg) scale(1);
+        transform: rotate(-45deg) scale(1);
+    }
+
+    .checkbox label {
+        min-height: 34px;
+        display: block;
+        padding-left: 40px;
+        margin-bottom: 0;
+        font-weight: normal;
+        cursor: pointer;
+        vertical-align: sub;
+    }
+    .checkbox label span {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .checkbox input[type="checkbox"]:focus + label::before {
+        outline: 0;
+    }
+    .filter p {
+        color: black;
+        margin: 0px;
+    }
+    .range_div {
+        display: flex;
+        flex-flow: column wrap;
+        flex-basis: 300px;
+    }
+    .filter .range_label {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    #range1 {
+        margin: 20px 0px;
+        height: 1px;
+    }
+    .range_out {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .range_price {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .range_price .one{
+        transform: translate(0, -20px);
+        -webkit-transform: translate(0, -20px);
+    }
+    .range_price .two{
+        transform: translate(0, -20px);
+        -webkit-transform: translate(0, -20px);
+    }
+    .range_price p {
+        font-size: 14px;
+    }
+.catalog {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 5px;
+}
+    .item {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 200px;
+        height: 250px;
+        margin: 10px;
+    }
+        .pepe {
+            display: flex;
+            flex-direction: row;
+            background-color: darkorange;
+            justify-content: center;
+            border-radius: 60px;
+            height: 150px;
+            width: 200px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+            .pepe_img {
+                border-radius: 20px;
+                height: 150px;
+            }
+        .info {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+            .pepe_name {
+                color: black;
+                font-weight: 200;
+                margin: 4px;
+            }
+            .pepe_price {
+                color: black;
+                margin: 2px 4px;
+            }
+            .pepe_is {
+                color: rgb(74, 148, 74);
+                font-weight: 200;
+                margin: 2px 4px;
+            }
+            .buy {
+                color: white;
+                width: 100px;
+                background-color: darkolivegreen;
+                text-align: center;
+                border-radius: 5px;
+                margin: 40px 4px 0px;
+            }
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 70px; 
+}
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 12px;
+    text-decoration: none;
+    margin: 2px;
+
+}
+.pagination a.active {
+    background-color: #4CAF50;
+    border-radius: 15px;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 15px;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 60px;
+    margin-top:auto; 
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    background-color: darkolivegreen;
+    padding:5px 10px;
+}
+footer p{
+    font-size: 16px;
+}
+footer a{
+    font-size: 16px;
+}
+footer .right{
+    color: white;
+    position: fixed;
+    right:0;
+    background-color: darkolivegreen;
+    padding:5px 10px;
+}
+@media screen and (min-width: 320px) and (max-width: 768px){
+    .content {
+        display: flex;
+        flex-flow: column;
+    }
+    .filter {
+        display: flex;
+        flex-flow: row;
+    }
+    .range_div {
+        margin-left: 30px;
+    }
+    #range1 {
+        margin: 20px 0px;
+        height: 1px;
+    }
+}
+
+/* CARD */
+
+.card_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    flex-grow: 1;
+    flex-basis: 200px;
+    margin: 10px;
+}
+    .card_pepe {
+        display: flex;
+        flex-direction: row;
+        background-color: darkorange;
+        justify-content: center;
+        border-radius: 140px;
+        height: 450px;
+        width: 600px;
+        padding: 15px;
+        margin-top: 10px;
+    }
+        .card_pepe_img {
+            border-radius: 20px;
+            height: 450px;
+        }
+    .card_info {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 40px;
+    }
+        .card_pepe_name {
+            color: black;
+            font-weight: 200;
+            margin: 8px;
+        }
+        .card_pepe_price {
+            color: black;
+            margin: 4px 8px;
+        }
+        .card_pepe_is {
+            color: rgb(74, 148, 74);
+            font-weight: 200;
+            margin: 4px 8px;
+        }
+        .card_buy {
+            color: white;
+            width: 100px;
+            background-color: darkolivegreen;
+            text-align: center;
+            border-radius: 5px;
+            margin: 20px 4px 10px;
+        }
+    .description_item .row { 
+        display: flex; 
+        flex-flow: row; 
+        justify-content: space-between; 
+    } 
+    .description_item .row div{ 
+        border-bottom: 2px dotted black; 
+        flex: 1 1; 
+    } 
+    
+    .comment { 
+        padding: 5px 10px; 
+        display: flex; 
+        border-radius: 15px; 
+        border: 2px solid tomato; 
+        background-color: rgb(224, 145, 145); 
+        margin-bottom: 10px; 
+    } 
+    .user_photo { 
+        width: 70px; 
+        height: 70px; 
+        border-radius: 100%; 
+    } 
+    .user_name { 
+        color: white; 
+    } 
+    .comment_body { 
+        display: flex; 
+        flex-flow: column; 
+        margin-left: 10px; 
+        justify-content: center; 
+    }
+    .row {
+        margin: 10px 0px;
+    } 
+    
+    @media  (max-width: 1023px){ 
+        .card_item { 
+            display: flex; 
+            flex-flow: column; 
+            align-items: center; 
+        } 
+        .card_pepe { 
+            margin-left: 0px; 
+        } 
+        .card_info { 
+            display: flex; 
+            flex-flow: column; 
+            align-items: center; 
+            margin-left: 0px; 
+            margin-right: 0px; 
+            flex: 1 1; 
+            width: 90%; 
+        } 
+        .description_item { 
+            width: 80%; 
+            margin-bottom: 20px; 
+        } 
+        .buy_btn_page1 { 
+            margin-bottom: 20px; 
+            width: 80%; 
+        } 
+        .comment { 
+            width: 90%;
+            margin-bottom: 30px; 
+        } 
+    }

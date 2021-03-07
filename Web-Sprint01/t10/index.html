@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head> 
+    <meta charset="UTF-8">
+    <title>t10</title>
+    <meta name="description" content="t10. Settings">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Settings</h1>
+    <div class="content">
+        <div class="settings">
+            <div class="typeface">
+                <p>Typeface</p>
+                <select>
+                    <option>Acunim Pro</option>
+                    <option class="test">Comic Sans</option>
+                    <option style="font-family: 'Times New Roman', Times, serif;">Times New Roman</option>
+                </select>
+            </div>
+            <div class="weight">
+                <p>Weight</p>
+                <input type="radio" id="Regular" class="usr_checkbox" value="Regular" name="weight" checked="checked">
+                <label for="Regular" id="regular_label">Regular</label>
+
+                <input type="radio" id="Bold" class="usr_checkbox" value="Bold" name="weight">
+                <label for="Bold" id="bold_label">Bold</label>
+            </div>
+            <div class="size">
+                <p>Size</p>
+                <input type="range" step="1" min="12" max="24" value="14" />
+                <p><span id="lower">A</span><span id="upper">A</span></p>
+            </div>
+            <div class="dark_UI">
+                <p>Dark UI</p>
+                <input type="checkbox" id="theme" class="usr_checkbox" value="theme">
+                <label for="theme" id="theme_label"></label>
+            </div>
+
+            <div class="color">
+                <p>Color</p>
+                <div class="color_lables">
+                    <input type="radio" id="blue" class="usr_checkbox" value="blue" name="color" checked="checked">
+                    <label for="blue" id="blue_label"></label>
+
+                    <input type="radio" id="green" class="usr_checkbox" value="green" name="color">
+                    <label for="green" id="green_label"></label>
+
+                    <input type="radio" id="pink" class="usr_checkbox" value="pink" name="color">
+                    <label for="pink" id="pink_label"></label>
+
+                    <input type="radio" id="yellow" class="usr_checkbox" value="yellow" name="color">
+                    <label for="yellow" id="yellow_label"></label>
+
+                    <input type="radio" id="orange" class="usr_checkbox" value="orange" name="color">
+                    <label for="orange" id="orange_label"></label>
+                </div>
+            </div>
+        </div>
+
+        <nav class="selectors">
+            <img src="assets/images/artistic-brush.png" alt="brush">
+            <img src="assets/images/user-icon.png" alt="user">
+            <img src="assets/images/sms-speech-bubble.png" alt="sms">
+            <img src="assets/images/computer-screen.png" alt="screen">
+        </nav>
+    </div>
+    <footer><script> </script></footer>
+</body>
+
+</html>

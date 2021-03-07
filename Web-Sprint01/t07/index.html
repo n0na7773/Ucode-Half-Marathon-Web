@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>t07</title>
+    <meta name="description" content="t07. Online store">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>PepeShop</h1>
+        <a href="#">About</a>
+        <a href="#">Service</a>
+        <a href="#">Contact</a>
+        <input class="search" type="text" placeholder="Search               ">
+        <p>Phone: +380-47-322-22-81</p>
+    </div>
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li>Catalog</li>
+    </ul>
+    <p class="catal_name">Catalog</p>
+    <div class="filter_row1">
+        <div class="job">
+            <input type="checkbox" id="defeat">
+            <label for="defeat">HAPPY</label>
+        </div>
+        <div class="job">
+            <input type="checkbox" id="save">
+            <label for="save">CLOWNY</label>
+        </div>
+        <div class="job">
+            <input type="checkbox" id="stop">
+            <label for="stop">ANGRY</label>
+        </div>
+    </div>
+    <div class="content">
+        <div class="filter">
+            <div class="container">
+                <p>Chance of ROFL Effect</p>
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox" name="" value="">
+                    <label for="checkbox"><span>Unlikely (0-20%)</span></label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox2" name="" value="">
+                    <label for="checkbox2"><span>Mild (20-40%)</span></label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox3" name="" value="">
+                    <label for="checkbox3"><span>Moderate (40-60%)</span></label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox4" name="" value="">
+                    <label for="checkbox4"><span>Likely (60-80%)</span></label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox5" name="" value="">
+                    <label for="checkbox5"><span>Certain (80-100%)</span></label>
+                </div>
+            </div>
+            <div class = "range_div">
+                <label class="range_label" for="range1">Price</label>
+                <input type="range" id="range1" name="range1" min="0" max="2000" step="10" value="1000"
+                    oninput="this.nextElementSibling.value = this.value">
+                <output class="range_out">1000</output>
+                <div class="range_price">
+                    <p class="one">0</p>
+                    <p class="two">2000</p>
+                </div>
+            </div>
+        </div>
+        <div class="catalog">
+            <div class="item">
+                <div class="pepe">
+                    <img class="pepe_img" src="assets/images/Pepega.png" alt="pepega">
+                </div>
+                <div class="info">
+                    <p class="pepe_name">Pepega</p>
+                    <p class="pepe_price">1000$</p>
+                    <p class="pepe_is">available</p>
+                    <a class="buy" href="card.html">BUY</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pepe">
+                    <img class="pepe_img" src="assets/images/PepeClown.png" alt="pepega">
+                </div>
+                <div class="info">
+                    <p class="pepe_name">PepeClown</p>
+                    <p class="pepe_price">1200$</p>
+                    <p class="pepe_is">available</p>
+                    <a class="buy" href="card.html">BUY</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pepe">
+                    <img class="pepe_img" src="assets/images/PepeAngry.png" alt="pepega">
+                </div>
+                <div class="info">
+                    <p class="pepe_name">PepeAngry</p>
+                    <p class="pepe_price">700$</p>
+                    <p class="pepe_is">available</p>
+                    <a class="buy" href="card.html">BUY</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pepe">
+                    <img class="pepe_img" src="assets/images/PepeCry.png" alt="pepega">
+                </div>
+                <div class="info">
+                    <p class="pepe_name">PepeCry</p>
+                    <p class="pepe_price">400$</p>
+                    <p class="pepe_is">available</p>
+                    <a class="buy" href="card.html">BUY</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">&raquo;</a>
+    </div>
+    <footer>
+        <p>Copyright @ 2021 | n0na7773 | All Rights Reserved</p>
+        <div class="right">
+            <a href="#">Terms of Service</a>
+            <span>|</span>
+            <a href="#">Private Policy</a>
+        </div>
+    </footer>
+</body>
+
+</html>

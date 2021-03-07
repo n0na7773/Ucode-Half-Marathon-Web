@@ -2,6 +2,7 @@
     position: absolute;
     top: calc(50vh - 95.25px);
     left: calc(50vw - 150px);
+    transition: all 0.3s ease-in-out 0s;
 }
 .image:hover {
     cursor: default;
