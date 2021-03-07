@@ -9,10 +9,50 @@
 </head>
 
 <body>
-    <h1 class="name" style="background: tomato;">HTML</h1>
+    <div class="topic" style="border-color: gray; justify-content: left;">
+        <ol>
+            <li><a href="#html_link">Html</a>
+                <ol>
+                    <li><a href="#p">p</a></li>
+                    <li><a href="#button">button</a></li>
+                    <li><a href="#meta">meta</a></li>
+                    <li><a href="#script">script</a></li>
+                    <li><a href="#span">span</a></li>
+                    <li><a href="#strong">strong</a></li>
+                    <li><a href="#textarea">textarea</a></li>
+                    <li><a href="#input">input</a></li>
+                    <li><a href="#br">br</a></li>
+                    <li><a href="#a">a</a></li>
+                </ol>
+            </li>
+            <li><a href="#css_link">Css</a>
+                <ol>
+                    <li><a href="#border">border</a></li>
+                    <li><a href="#background">background</a></li>
+                    <li><a href="#color">color</a></li>
+                    <li><a href="#family">font-family</a></li>
+                    <li><a href="#size">font-size</a></li>
+                    <li><a href="#align">text-align</a></li>
+                    <li><a href="#transform">transform</a></li>
+                    <li><a href="#decoration">text-decoration</a></li>
+                    <li><a href="#shadow">text-shadow</a></li>
+                    <li><a href="#opacity">opacity</a></li>
+                </ol>
+            </li>
+            <li><a href="#proto_link">Protocols</a>
+                <ol>
+                    <li><a href="#desc">Description</a></li>
+                    <li><a href="#http">HTTP/HTTPS</a></li>
+                    <li><a href="#dns">DNS</a></li>
+                    <li><a href="#ip">IP</a></li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+    <h1 class="name" id="html_link" style="background: tomato;">HTML</h1>
     <div class="topic" style="border-color: tomato;">
         <div class="subtopic">
-            <p class="tag">p</p>
+            <p class="tag" id="p">p</p>
             <p>represents a paragraph</p>
             <br>
             <p class="code">&lt;p&gt;Some text&lt;/p&gt;</p>
@@ -20,7 +60,7 @@
             <p>Some text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">button</p>
+            <p class="tag" id="button">button</p>
             <p>represents a clickable button, used to submit forms or anywhere in a document for accessible, standard
                 button functionality</p>
             <br>
@@ -29,7 +69,7 @@
             <button type="button">Some text</button>
         </div>
         <div class="subtopic">
-            <p class="tag">meta</p>
+            <p class="tag" id="meta" >meta</p>
             <p>represents metadata that cannot be represented by other HTML meta-related elements</p>
             <br>
             <p class="code">&lt;meta charset="utf-8"&gt;</p>
@@ -37,21 +77,21 @@
             <br>
         </div>
         <div class="subtopic">
-            <p class="tag">script</p>
+            <p class="tag" id="script">script</p>
             <p>used to embed executable code or data; this is typically used to embed or refer to JavaScript code</p>
             <br>
             <p class="code">&lt;script&gt;alert("Hello World!");&lt;/script&gt;</p>
             <br>
         </div>
         <div class="subtopic">
-            <p class="tag">span</p>
+            <p class="tag" id="span">span</p>
             <p>generic inline container for phrasing content, which does not inherently represent anything</p>
             <p class="code">&lt;p&gt;Some &lt;span style="color:red"&gt;text&lt;/span&gt;&lt;/p&gt;</p>
             <br>
             <p>Some <span style="color:red">text</span></p>
         </div>
         <div class="subtopic">
-            <p class="tag">strong</p>
+            <p class="tag" id="div">strong</p>
             <p>indicates that its contents have strong importance, seriousness, or urgency</p>
             <br>
             <p class="code">&lt;p&gt;Some &lt;strong&gt;text&lt;strong&gt;&lt;/p&gt;</p>
@@ -59,7 +99,7 @@
             <p>Some <strong>text</strong></p>
         </div>
         <div class="subtopic">
-            <p class="tag">textarea</p>
+            <p class="tag" id="textarea">textarea</p>
             <p>represents a multi-line plain-text editing control, useful when you want to allow users to enter a
                 sizeable amount of free-form text</p>
             <br>
@@ -68,7 +108,7 @@
             <textarea rows="2" cols="10">Some text</textarea>
         </div>
         <div class="subtopic">
-            <p class="tag">input</p>
+            <p class="tag" id="input">input</p>
             <p>used to create interactive controls for web-based forms in order to accept data from the user</p>
             <br>
             <p class="code">&lt;input type="text"&gt;</p>
@@ -76,7 +116,7 @@
             <input type="text">
         </div>
         <div class="subtopic">
-            <p class="tag">br</p>
+            <p class="tag" id="br">br</p>
             <p>produces a line break in text</p>
             <br>
             <p class="code">&lt;p&gt;Some&lt;br&gt;text&lt;/p&gt;</p>
@@ -84,7 +124,7 @@
             <p>Some<br>text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">a</p>
+            <p class="tag" id="a">a</p>
             <p>creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a
                 URL can address</p>
             <br>
@@ -93,10 +133,10 @@
             <a href="https://example.com">Website</a>
         </div>
     </div>
-    <h1 class="name" style="background: darkslateblue;">CSS</h1>
+    <h1 class="name" id="css_link" style="background: darkslateblue;">CSS</h1>
     <div class="topic" style="border-color: darkslateblue;">
         <div class="subtopic">
-            <p class="tag">border</p>
+            <p class="tag" id="border">border</p>
             <p>sets an element's border</p>
             <br>
             <p class="code">border: dashed red;</p>
@@ -104,7 +144,7 @@
             <p style="border: dashed red;">Some text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">background</p>
+            <p class="tag" id="background">background</p>
             <p>sets all background style properties at once, such as color, image, origin and size, or repeat method</p>
             <br>
             <p class="code">background: slategray;</p>
@@ -112,7 +152,7 @@
             <p style="background: slategray;">Some text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">color</p>
+            <p class="tag" id="color">color</p>
             <p>sets the foreground color value of an element's text and text decorations, and sets the currentcolor
                 value</p>
             <br>
@@ -121,7 +161,7 @@
             <p style="color: rebeccapurple;">Some text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">font-family</p>
+            <p class="tag" id="family">font-family</p>
             <p>specifies a prioritized list of one or more font family names and/or generic family names for the
                 selected element</p>
             <br>
@@ -130,7 +170,7 @@
             <p style="font-family: Gill Sans, sans-serif;">Some text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">font-size</p>
+            <p class="tag" id="size">font-size</p>
             <p>sets the size of the font</p>
             <br>
             <p class="code">font-size: 1.5em;</p>
@@ -138,7 +178,7 @@
             <p style="font-size: 1.5em;">Some text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">text-align</p>
+            <p class="tag" id="align">text-align</p>
             <p>sets the horizontal alignment of a block element or table-cell box</p>
             <br>
             <p class="code">text-align: right;</p>
@@ -146,7 +186,7 @@
             <p style="text-align: right;">Some text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">transform</p>
+            <p class="tag" id="transform">transform</p>
             <p>property lets you rotate, scale, skew, or translate an element.</p>
             <br>
             <p class="code">transform: rotate(-0.01turn);</p>
@@ -154,7 +194,7 @@
             <br>
         </div>
         <div class="subtopic">
-            <p class="tag">text-decoration</p>
+            <p class="tag" id="decoration">text-decoration</p>
             <p>sets the appearance of decorative lines on text</p>
             <br>
             <p class="code">text-decoration: underline dotted red;</p>
@@ -162,7 +202,7 @@
             <p style="text-decoration: underline dotted red;">Some text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">text-shadow</p>
+            <p class="tag" id="shadow">text-shadow</p>
             <p>adds shadows to text</p>
             <br>
             <p class="code">text-shadow: #FC0 1px 0 10px;</p>
@@ -170,7 +210,7 @@
             <p style="text-shadow: #FC0 1px 0 10px;">Some text</p>
         </div>
         <div class="subtopic">
-            <p class="tag">opacity</p>
+            <p class="tag" id="opacity">opacity</p>
             <p>sets the opacity of an element</p>
             <br>
             <p class="code">opacity: 0.23;</p>
@@ -178,10 +218,10 @@
             <p style="opacity: 0.23;">Some text</p>
         </div>
     </div>
-    <h1 class="name" style="background: skyblue;">Protocols</h1>
+    <h1 class="name" id="proto_link"style="background: skyblue;">Protocols</h1>
     <div class="topic" style="border-color: skyblue;">
         <div class="subtopic">
-            <p class="tag">Description</p>
+            <p class="tag" id="desc">Description</p>
             <br>
             <p>A protocol is a standard set of rules that allow electronic devices to communicate with each other. These
                 rules include what type of data may be transmitted, what commands are used to send and receive data, and
@@ -194,7 +234,7 @@
             <br>
         </div>
         <div class="subtopic">
-            <p class="tag">HTTP/HTTPS</p>
+            <p class="tag" id="http">HTTP/HTTPS</p>
             <br>
             <p>What is HTTP?<br><br>
                 HTTP is Hypertext transfer protocol. Simply put - Rules to sending and receiving text-based messages. As
@@ -220,7 +260,7 @@
             <br>
         </div>
         <div class="subtopic">
-            <p class="tag">DNS</p>
+            <p class="tag" id="dns">DNS</p>
             <br>
             <p><b>DNS</b> is a global system for translating IP addresses to human-readable domain names. When a user tries to
                 access a web address like “example.com”, their web browser or application performs a DNS Query against a
@@ -258,7 +298,7 @@
 
         </div>
         <div class="subtopic">
-            <p class="tag">IP</p>
+            <p class="tag" id="ip">IP</p>
             <br>
             <p>An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a
                 computer network that uses the Internet Protocol for communication.
