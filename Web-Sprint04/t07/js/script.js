@@ -1,111 +1,35 @@
-class Node { 
-    constructor(value) { 
-        this.value = value; 
-        this.next = null
-    } 
-} 
-class LinkedList {
-    constructor() {
-        this.head = null; 
-        this.size = 0; 
-    } 
-    add(value) {
-        var node = new Node(value); 
-        var current; 
-        if (this.head == null) 
-            this.head = node; 
-        else { 
-            current = this.head; 
-            while (current.next) { 
-                current = current.next; 
-            } 
-            current.next = node; 
-        } 
-        this.size++; 
-    }
-    remove(value) {
-        var current = this.head; 
-        var prev = null; 
-
-        while (current != null) { 
-            if (current.value === value) { 
-                if (prev == null) { 
-                    this.head = current.next; 
-                } else { 
-                    prev.next = current.next; 
-                } 
-                this.size--; 
-                return true; 
-            }
-            prev = current; 
-            current = current.next;  
-        } 
-        return false;
-    }
-    contains(value) {
-        var current = this.head; 
-
-        while (current != null) { 
-            if (current.value === value) 
-                return true; 
-            current = current.next; 
-        } 
-        return false;
-    }
-    [Symbol.iterator] = function() {
-        let current = this.head;
-        return {
-            next() {
-                if (current) {
-                    let data = current.value;
-                    current = current.next;
-                    return {done: false, value: data};
-                }
-                return {done: true};
-            }
-        };
-    };
-    clear() {
-        this.head = null;
-    }
-    count() {
-        return size;
-    }
-    log() {
-        var current = this.head; 
-        var str = current.value;
-        current = current.next;  
-        while (current) { 
-            str +=", " + current.value ; 
-            current = current.next; 
-        } 
-        console.log(str);
-    }
-}
-function createLinkedList(array) {
-    const list = new LinkedList();
-    array.forEach(value => list.add(value));
-    return list;
+function getWeather( lat, lon, exclude ) {
+    var key = "7b19e835e72860795348f57aab5980e8";
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exclude}&appid=${key}`)
+    .then(function(resp) { return resp.json(); })
+    .then(function(data) {
+        console.log(data);
+        drawWeather(data);
+    })
 }
 
+getWeather("50.0", "36.25", "minutely"); // Kharkiv
 
-/*const ll = createLinkedList([100, 1, 2, 3, 100, 4, 5, 100]);
-ll.log();
-// "100, 1, 2, 3, 100, 4, 5, 100"
-while(ll.remove(100));
-ll.log();
-// "1, 2, 3, 4, 5"
-ll.add(10);
-ll.log();
-// "1, 2, 3, 4, 5, 10"
-console.log(ll.contains(10));
-// "true"
-let sum = 0;
-for (const n of ll) {
-sum += n; }
-console.log(sum);
-// "25"
-ll.clear();
-ll.log();
-// ""
-*/
+function drawWeather(d) {
+    for(let i = 0; i < 6; i++) {
+        let celcius = Math.round(parseFloat(d.daily[i].temp.day)-273.15);
+        let date = new Date(d.daily[i].dt * 1000).toUTCString();
+        let month = date.split(" ")[1];
+        let day = date.split(" ")[2];
+
+        document.querySelector(".day" + (i + 1) + " .date").innerHTML = day + " " + month;
+
+        if(celcius > 0) {
+            document.querySelector(".day" + (i + 1) + " .temp").innerHTML = "+" + celcius + "°";
+        }
+        else {
+            document.querySelector(".day" + (i + 1) + " .temp").innerHTML = celcius + "°";
+        }
+
+        if(d.daily[i].snow > 1) {
+            document.querySelector(".day" + (i + 1) + " .image").setAttribute("src", "https://cdn3.iconfinder.com/data/icons/tango-icon-library/48/weather-snow-512.png");
+        } else {
+            document.querySelector(".day" + (i + 1) + " .image").setAttribute("src", "https://cdn0.iconfinder.com/data/icons/weather-596/132/weather-39-512.png");
+        }
+    }
+}

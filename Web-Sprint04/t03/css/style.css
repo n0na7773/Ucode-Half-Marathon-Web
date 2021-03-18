@@ -1,85 +1,43 @@
-body {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+.slider{
+  position: relative;
+  margin: auto;
+  height: 600px;
+  width: 600px;
+}
+.slider .item img {
+  object-fit: cover;
+  height: 600px;
+  width: 600px;
+}
+.slider .previous, .slider .next {
+  cursor: pointer;
+  position: absolute;
+  background-color: rgba(160, 155, 155, 0.4);
+  top: 0;
+  margin-left: -38px;
+  width: auto;
+  padding: calc(300px - 8.516px - 3.938px/2) 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.6s ease;
+}
+.slider .next {
+  right: 0;
+  margin-right: -38px;
+}
+.slider .previous:hover, .slider .next:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.slider .item {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {
+      opacity: 0.4
   }
-  h1 {
-    color: #2098ad;
+  to {
+      opacity: 1
   }
-  ul {
-    margin-left: -40px;
-    list-style-type: none;
-  }
-  button {
-    background-color: #2098ad;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px;
-    margin: 0px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    transition: all 0.3s ease-in-out;
-  }
-  button:hover {
-    cursor: pointer;
-    background-color: #a8a632;
-    transition: all 0.5s ease-in-out;
-  }
-  .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background:#997a12;
-    border: 1px solid goldenrod;
-    padding: 15px 50px;
-    border-radius: 5px;
-    margin: 10px;
-  }
-  .status_bar {
-    padding-bottom: 10px;
-  }
-  .actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .row1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-bottom: 10px;
-  }
-  .row2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-bottom: 10px;
-  }
-  .row3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-  .human, .hero {
-    height: 350px;
-    border-radius: 5px;
-    padding: 5px;
-    border: 1px solid goldenrod;
-    background-color: #a8a632;
-  }
-  .button_hidden, .image_hidden {
-    display: none;
-  }
+}

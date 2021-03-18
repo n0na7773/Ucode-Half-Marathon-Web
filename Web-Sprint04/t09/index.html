@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Hidden Proxy</title>
-  <meta name="description" content="t07. Hidden Proxy">
-</head>
-<body>
-  <h1>Hidden Proxy</h1>
-  <script src="js/script.js"></script>
-</body>
+    <head>
+        <title>Local Storage</title>
+        <meta charset="utf-8">
+        <meta name="description" content="t09. Local Storage">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" defer></script>
+    </head>
+    <body onload="loadStorage()">
+      <h1>Local Storage</h1>
+      <div class="main">
+          <div class="buttons">
+				<button id = "first" onclick="addToStorage()">Add to storage</button>
+				<button id = "last" onclick="clearStorage()">Clear storage</button>
+          </div>
+
+          <div class="form">
+				<span>Text input:</span>
+				<input id="text" placeholder="Type something">
+          </div>
+          <div class="archive">
+            	<span>History:</span>
+            	<span id="history" type="text"></span>
+          </div>
+      </div>
+      <script src="js/script.js"></script>
+    </body>
 </html>

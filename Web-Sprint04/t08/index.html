@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Export LinkedList</title>
-  <meta name="description" content="t08. Export LinkedList">
-</head>
-<body>
-  <h1>Export LinkedList</h1>
-  <script type="module" src="js/script.js"></script>
-</body>
+    <head>
+        <title>RegExp and Cookies</title>
+        <meta charset="utf-8">
+        <meta name="description" content="t09. RegExp and Cookies">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body onload="showCookie()" onclick="showCookie()">
+      <h1>RegExp and Cookies</h1>
+      <div class="main">
+          <div class="buttons">
+				<button onclick="toPhoneNumber()">To phone number [<span id="phone">0</span>]</button>
+				<button onclick="wordCount()">Word count [<span id="count">0</span>]</button>
+				<button onclick="wordReplace()">Word replace [<span id="replace">0</span>]</button>
+          </div>
+
+          <div class="form">
+				<span>Word input:</span>
+				<input id="word" placeholder="Type something">
+				<span>Text input:</span>
+            	<textarea id="text" rows="10" placeholder="Type something"></textarea>
+          </div>
+          <div class="archive">
+            	<span>Output:</span>
+            	<input id="output" type="text">
+          </div>
+      </div>
+      <script src="js/script.js"></script>
+    </body>
 </html>

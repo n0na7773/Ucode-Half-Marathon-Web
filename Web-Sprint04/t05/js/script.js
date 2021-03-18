@@ -1,66 +1,69 @@
-let guestList = new WeakSet();
+let state = { target: null }
 
-let name1 = { name: "Ilya" };
-let name2 = { name: "Anton" };
-let name3 = { name: "Sanya" };
-let name4 = { name: "Vitalik" };
-let name5 = { name: "Andrey" };
+document.body.addEventListener("mousedown", event => {
+    if (event.target && event.target.classList.contains("stone") && event.target.getAttribute("value") == "on") {
+        event.target.style.position = 'absolute';
+        event.target.style.zIndex = 1000;
+        state.target = event.target;
+        state.offsetX = event.offsetX;
+        state.offsetY = event.offsetY;
+    }
+});
 
-guestList.add(name1, "Ilya");
-guestList.add(name2, "Anton");
-guestList.add(name3, "Sanya");
-guestList.add(name4, "Vitalik");
-guestList.add(name5, "Andrey");
+document.body.addEventListener("mouseup", function() {state.target = null;});
 
-console.log(`Is allowed ${name1.name}: ${guestList.has(name1)}`);
-console.log(`Is allowed ${name2.name}: ${guestList.has(name1)}`);
+document.body.addEventListener("mousemove", event => {
+    if (state.target) {
+        state.target.style.left = event.pageX - state.target.offsetWidth / 2 + "px";
+        state.target.style.top = event.pageY - state.target.offsetHeight / 2 + "px";
+    }
+});
 
-console.log(`Guest ${name2.name} deleted`);
-guestList.delete(name2);
+document.body.addEventListener("dblclick", event => {
+    if (event.target && event.target.classList.contains("stone")) {
+        if (event.target.getAttribute("value") == "on")
+            event.target.setAttribute("value", "off");
+        else
+            event.target.setAttribute("value", "on");
+    }
+});
 
-console.log(`Is allowed ${name1.name}: ${guestList.has(name1)}`);
-console.log(`Is allowed ${name2.name}: ${guestList.has(name2)}`);
+/*document.body.addEventListener("mousedown", onMousedown);
+function onMousedown(e) {
+    if (e.target && e.target.classList.contains("stone") && e.target.getAttribute("value") == "on") {
+    
+        e.target.style.position = 'absolute';
+        e.target.style.zIndex = 1000;
+        document.body.append(e.target);
+        
+        moveAt(e.pageX, e.pageY);
 
-let menu = new Map();
+        function moveAt(pageX, pageY) {
+            e.target.style.left = pageX - e.target.offsetWidth / 2 + 'px';
+            e.target.style.top = pageY - e.target.offsetHeight / 2 + 'px';
+        }
 
-menu.set('noodles', 79);
-menu.set('shawarma', 89);
-menu.set('pizza', 129);
-menu.set('salad', 89);
-menu.set('burger', 69);
+        function onMouseMove(e) {
+            moveAt(e.pageX, e.pageY);
+        }
+        document.addEventListener('mousemove', onMouseMove);
+        document.body.addEventListener("ondrag", event => {
+            event.target.style.cursor = "default";
+            state.target = null;
+        });
 
-console.log(`Amount of dishes: ${menu.size}`);
-for(let entry of menu) { 
-    console.log(entry); 
+        e.target.addEventListener("mouseup", onMouseup); 
+        function onMouseup(e) {
+            document.removeEventListener('mousemove', onMouseMove)
+            e.target.onmouseup = null;
+        }
+    }    
 }
-
-let bankVault = new WeakMap();
-
-let box1 = { id: 1, name: 'Ilya', money: 2500}
-let box2 = { id: 2, name: 'Anton', money: 2000}
-let box3 = { id: 3, name: 'Sanya', money: 3000}
-let box4 = { id: 4, name: 'Vitalik', money: 6000}
-let box5 = { id: 5, name: 'Andrey', money: 5000}
-
-bankVault.set(box1, 12111);
-bankVault.set(box2, 35222);
-bankVault.set(box3, 40333);
-bankVault.set(box4, 42444);
-bankVault.set(box5, 22555);
-
-console.log(`Credentials ${bankVault.get(box1)}: money - ${box1.money}`);
-console.log(`Credentials ${bankVault.get(box2)}: money - ${box2.money}`);
-console.log(`Credentials ${bankVault.get(box3)}: money - ${box3.money}`);
-console.log(`Credentials ${bankVault.get(box4)}: money - ${box4.money}`);
-console.log(`Credentials ${bankVault.get(box5)}: money - ${box5.money}`);
-
-let coinCollection = new Set();
-
-coinCollection.add("BTC");
-coinCollection.add("ETH");
-coinCollection.add("RVN");
-coinCollection.add("ZEC");
-coinCollection.add("XRP");
-
-console.log(`My coins: `);
-console.log(coinCollection);
+document.body.addEventListener("click", event => {
+    if (event.target && event.target.classList.contains("stone")) {
+        if (event.target.getAttribute("value") == "on")
+            event.target.setAttribute("value", "off");
+        else
+            event.target.setAttribute("value", "on");
+    }
+});*/

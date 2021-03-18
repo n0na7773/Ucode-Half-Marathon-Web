@@ -1,38 +1,56 @@
-#lab {
+body {
+    background: white;
+    margin: 0;
+}
+
+.main {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 8%;
-    width: 500px;
-    height: 500px;
-    margin: auto;
     flex-direction: column;
-    background: #ffb300;
-    border: 6px solid #253324;
+    justify-content: center;
+    background-color: cadetblue;
+    box-shadow: 10px 5px 15px g;
+    margin: 40px;
+    border-radius: 20px 20px 0 0;
+    min-width: 500px;
+}
+.city {
+    background-color: skyblue;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+.city_name {
     text-align: center;
-  }
-  #btn {
-    display: inline-block;
-    padding: 7px 25px;
-    cursor: pointer;
-    box-shadow: 3px 4px 0 1px #8a2a21;
-    background: #c62d1f linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-    border-radius: 18px;
-    border: 3px solid #d02718;
-    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+.forecast {
+    margin: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.forecast .day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    border-radius: 8px;
+    background: rgb(241, 231, 213);
+    color: white;
+    padding: 65px 25px;
+    margin: 10px
+}
+img {
+    width: 100px;
+}
+.date, .temp {
+    color:black;
+    font-size: 22px;
+}
+.forecast #card span {
+    font-weight: 400;
+    font-size: 1em;
     text-align: center;
-    font: bold 25px Arial;
-    text-decoration: none;
-    text-shadow: 0 1px 0 #810e05;
-  }
-  #btn:hover {
-    background: #f24437 linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
-  }
-  #btn:active {
-    position: relative;
-  top: 1px; }
-  #hero {
-    font: 60px 'Bowlby One', cursive;
-    letter-spacing: 2px;
-  }
+    cursor: default;
+}

@@ -1,38 +1,41 @@
-#lab {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 8%;
-    width: 500px;
-    height: 500px;
-    margin: auto;
-    flex-direction: column;
-    background: #ffb300;
-    border: 6px solid #253324;
-    text-align: center;
-  }
-  #btn {
-    display: inline-block;
-    padding: 7px 25px;
-    cursor: pointer;
-    box-shadow: 3px 4px 0 1px #8a2a21;
-    background: #c62d1f linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-    border-radius: 18px;
-    border: 3px solid #d02718;
-    color: #fff;
-    text-align: center;
-    font: bold 25px Arial;
-    text-decoration: none;
-    text-shadow: 0 1px 0 #810e05;
-  }
-  #btn:hover {
-    background: #f24437 linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
-  }
-  #btn:active {
-    position: relative;
-  top: 1px; }
-  #hero {
-    font: 60px 'Bowlby One', cursive;
-    letter-spacing: 2px;
-  }
+h1, p {
+    user-select: none
+}
+.stone {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    transform: rotate(45deg);
+}
+  
+.stone[value="off"] { border: 2px dashed black; }
+#yellow {
+    left: 6%;
+    top: 20%;
+    background-color: #D4C464;
+}
+#green {
+    left: 12%;
+    top: 20%;
+    background-color: #70D372;
+}
+#blue {
+    left: 18%;
+    top: 20%;
+    background-color: #3884D1;
+}
+#red {
+    left: 24%;
+    top: 20%;
+    background-color: #C74757;
+}
+#pink {
+    left: 30%;
+    top: 20%;
+    background-color: #C95F7C;
+}
+#purple {
+    left: 36%;
+    top: 20%;
+    background-color: #9B54D0;
+}

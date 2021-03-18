@@ -1,38 +1,86 @@
-#lab {
+body {
+    padding: 1% 5%;
+}
+h1 {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2%;
+}
+.content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 8%;
-    width: 500px;
-    height: 500px;
-    margin: auto;
+    flex-direction: row;
+    background-color: rgb(211, 211, 211);
+    border-radius: 5px;
+}
+.list {
+    display: flex;
     flex-direction: column;
-    background: #ffb300;
-    border: 6px solid #253324;
+    justify-content: flex-start;
+    border-right: 1px solid white;
+    align-items: center;
+    padding: 1%;
+}
+.list .movie{
+    padding: 5% 0;
+    margin: 1% 0;
+    border-radius: 0 10px 10px 0;
+    color: black;
+    width: 100%;
     text-align: center;
-  }
-  #btn {
-    display: inline-block;
-    padding: 7px 25px;
-    cursor: pointer;
-    box-shadow: 3px 4px 0 1px #8a2a21;
-    background: #c62d1f linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-    border-radius: 18px;
-    border: 3px solid #d02718;
-    color: #fff;
-    text-align: center;
-    font: bold 25px Arial;
-    text-decoration: none;
-    text-shadow: 0 1px 0 #810e05;
-  }
-  #btn:hover {
-    background: #f24437 linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
-  }
-  #btn:active {
-    position: relative;
-  top: 1px; }
-  #hero {
-    font: 60px 'Bowlby One', cursive;
-    letter-spacing: 2px;
-  }
+    
+}
+.list .movie:hover{
+    background-color: greenyellow;
+}
+.block {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    width: fit-content;
+    padding: 3%;
+}
+.block #info {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.block #info #title {
+    font-size: 28px;
+    text-align: start;
+    margin: 0;
+    padding: 0;
+}
+.block #info #date { 
+    font-size: 14px;
+    text-align: start;
+    margin: 0;
+    padding: 0;
+}
+.block #info #actors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 0px;
+}
+.block #info #actors span {
+    font-size:  18px;
+    background-color: #3a77cc;
+    color: white;
+    border-radius: 5px;
+    padding: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+}
+.block #info #description {
+    font-size: 18px;
+    word-wrap: normal;
+}
+.block #poster {
+    display: flex;
+    width: 40%;
+    margin-left: 5%;
+}
+.block #poster img {
+    width: 100%;
+    border-radius: 0 10px 10px 0;
+}

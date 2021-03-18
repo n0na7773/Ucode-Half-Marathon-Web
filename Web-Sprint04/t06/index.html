@@ -1,12 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Step generator</title>
-  <meta name="description" content="t06. Step generator">
+    <title>Lazy loading</title>
+    <meta charset="utf-8">
+    <meta name="description" content="t06. Lazy loading">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <h1>Step generator</h1>
-  <script src="js/script.js"></script>
+    <h1>Lazy loading</h1>
+    <div class="info">
+        <label id = "msg"><span id="num">0</span> images loaded from 20</label>
+    </div>
+    <div class="list">
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/186/200/200.jpg?hmac=bNtKzMZT8HFzZq8mbTSWaQvmkX8T7TE47fspKMfxVl8">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/648/200/200.jpg?hmac=Kb_qhDdDfOGevrbabLvz4Tp3fu-M7DxQE6APqQRnwVw">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/674/200/200.jpg?hmac=8R8yi_1uaRGCT1W62tjUJFrEyMy2JCZzmrjrXclOens">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/203/200/200.jpg?hmac=fydyJjsULq7iMwTTIg_m6g_PQQ1paJrufNsEiqbJRsg">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/19/200/200.jpg?hmac=U8dBrPCcPP89QG1EanVOKG3qBsZwAvtCLUrfeXdE0FI">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/33/200/200.jpg?hmac=Byvb9ZEKV47fLdwaE2BGClGsgcm5fyuDH6sWb9pvWbI">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/755/200/200.jpg?hmac=fgsDUz8GLl3UPtHhHlMIabU9V8LhbOPCwYGzrrn6CyU">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/453/200/200.jpg?hmac=IO3u3eOcKSOUCe8J1IlvctdxPKLTh5wFXvBT4O3BNs4">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/603/200/200.jpg?hmac=0BCtNqTfCvRnGEYZ9CJPnBJ8RjT9g0wRO3iDtLHWcnY">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/50/200/200.jpg?hmac=Tz-5Oumk5gfW4P4hAiYNsHDjmBVhOzedd8gy4aEsumY">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/182/200/200.jpg?hmac=MkR-XEPoojVUql6ALw3mXJhEU63027NZxRXsRqavT24">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/335/200/200.jpg?hmac=CS4kiSEelfhSQQtW7j6SFUV2ZlTmUV1vaX2iZKnbx7c">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/1083/200/200.jpg?hmac=ocBiYtawFGXm884DNfTBRQy65ZWvsTQf_XCnlTUdtB4">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/980/200/200.jpg?hmac=6XJlc3jZzO4_ikuKGQFXIuERlW0eZx82q3xiC-b3Tso">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/527/200/200.jpg?hmac=pt4SE0tD3d9wOZOKl-3uFHKRXPwF77K_UHZATkDnP5k">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/325/200/200.jpg?hmac=ZCsEKv0ID3Pljov7A1Ljhc4gOcr8fsqzEry_bTjeY2s">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/47/200/200.jpg?hmac=dF66rvzPwuJCh4L7IjS6I0D5xrpPvqhAjbE7FstnEnY">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/405/200/200.jpg?hmac=w4vWQ4bB3e6iySaumYqNsk7wC8m8ZZM-XzryqRqoVSU">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/853/200/200.jpg?hmac=f4LF-tVBBnJb9PQAVEO8GCTGWgLUnxQLw44rUofE6mQ">
+        </div>
+        <div>
+            <img class="image" src="https://screenshotlayer.com/images/assets/placeholder.png" width="200" height="200"
+                data-src="https://i.picsum.photos/id/51/200/200.jpg?hmac=AxDMciMBjL8UIKzxl80paiBUywP7elWptqQW_qTq8vw">
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

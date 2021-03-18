@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Mixin</title>
-  <meta name="description" content="t04. Mixin">
+    <meta charset="utf-8">
+    <title>Marvelous list</title>
+    <meta name="description" content="t04. Marvelous list">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <h1>Mixin</h1>
-  <script src="js/houseBuilder.js"></script>
-  <script src="js/script.js"></script>
+    <h1>Marvelous list</h1>
+    <div class="content">
+        <div class="list">
+            <span class="movie" id="movie1" onclick="web()">Dark Web: Cicada 3301</span>
+            <span class="movie" id="movie2" onclick="days()">Last Three Days</span>
+            <span class="movie" id="movie3" onclick="padre()">Padrenostro</span>
+        </div>
+        <div class="block">
+            <div id="info">
+                <h1 id="title">Dark Web: Cicada 3301</h1>
+                <span id="date">2021,&nbsp;&nbsp;USA,&nbsp;&nbsp;Mystery And Thriller, &nbsp;Comedy, &nbsp;Action,&nbsp;&nbsp;&nbsp;&nbsp;100min&nbsp;&nbsp;</span>
+                <div id="actors">
+                    <span id="actor1">Jack Kesy</span>
+                    <span id="actor2">Ron Funches</span>
+                    <span id="actor3">Alan Ritchson</span>
+                    <span id="actor4">Conor Leslie</span>
+                    <span id="actor5">Kris Holden-Ried</span>
+                </div>
+                <span id="desc">
+                    This intense, high-speed cyber-thriller is based on a series of mysterious, unsolved real-life
+                    events. It starts as genius hacker Connor discovers Cicada 3301, an online treasure hunt that could
+                    be a recruiting tool for a secret society. Soon Connor, art-expert friend Avi, and secretive
+                    librarian Gwen are dashing from graffiti sites to ancient libraries to uncover real-world clues. But
+                    they must outrun aggressive NSA agents, also hot on the trail of Cicada, who want the glory for
+                    themselves.
+                </span>
+            </div>
+            <div id="poster">
+                <img id="source" src="https://cdn.flickeringmyth.com/wp-content/uploads/2021/01/Cicada-3301-1-600x858.jpg">
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
