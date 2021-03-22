@@ -1,110 +1,144 @@
-.calculator {
-    --main-color: #adadad;
-    --sec-color: #DEDDDD;
-  
-    display: flex;
-    flex-wrap: wrap;
-    width: 300px;
-    height: 400px;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-  
-  .calculator button {
-    position: relative;
-    margin: 0;
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
+body {
     padding: 0;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1.5em;
-    background-color: var(--main-color);
-    transition: all 250ms ease;
-  }
-  
-  .calculator button:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255,255,255,.12);
-    transition: all 100ms ease-out;
-  }
-  
-  .calculator button:hover {
-    background-color: var(--sec-color);
-  }
-  
-  .calculator button:active:after {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  
-  .calculator_top {
-    display: flex;
-    width: 100%;
-    height: 20%;
+    margin: 10px;
+    background: linear-gradient(to right, #b5d408, #00ffc8);
     position: relative;
-  }
-  
-  .calculator_result {
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+    transition: background-color .2s ease;
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(167, 255, 25, 0.411);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
     display: flex;
-    justify-content: flex-end;
     align-items: flex-end;
-    
-    width: 65%;
-    padding-right: 10%;
-    padding-bottom: 5px;
-    order: 1;
-    font-size: 2em;
-    font-weight: 600;
-    background-color: var(--main-color);
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    border-left: 1px solid rgba(0,0,0,.1);
-    cursor: default;
-  }
-  
-  .calculator_clear {
-    width: 25%;
-  }
-  
-  
-  .calculator_right {
-    display: flex;
+    justify-content: space-around;
     flex-direction: column;
-    align-items: flex-end;
-    order: 1;
-    width: 25%;
-    height: 80%;
-  }
-  
-  .calculator_right .calculator_operator {
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    font-size: 2.5rem;
+}
+#custom-tooltip {
+    visibility: hidden;
+    padding: 5px 12px;
+    background-color: #000000df;
+    border-radius: 4px;
+    color: #fff;
+}
+.more {
+    position: absolute;
+    margin-top: 18px;
+    top: 0;
+    left: calc(50% - 620px);
+    display: none;
+}
+
+.more.active {
+    display: grid;
+}
+
+img {
+    width: 60px;
+}
+
+.kg-display, .length-display, .area-display {
+    width: 300px;
+    position: fixed;
+    right: 150px;
+    top: 150px;
+    display: none;
+}
+
+.kg-display.active, .length-display.active, .area-display.active {
+    display: block;
+}
+
+.kg-display input, .length-display input, .area-display input{
+    width: 300px;
+    text-align: start;
+    font-size: 1rem;
+    border: 1px solid white;
+    height: 40px;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+    color: #000;
+    margin-bottom: 0;
+    padding-left: 10px;
+    text-align-last: left;
+}
+
+.kg-display input::placeholder, .length-display input::placeholder, .area-display input::placeholder {
+    color: #000;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.group {
+    font-size: 1.1rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.length-display .group {
+    margin-bottom: 10px;
+}
+
+.group div {
+    padding: 15px 0 15px 10px;
     width: 100%;
-    height: 25%;
-  }
-  
-  
-  .calculator_main {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    width: 75%;
-  }
-  
-  .calculator_num,
-  .calculator_point,
-  .calculator_is {
-    width: 33.333%;
-  }
-  
-  .calculator_num[data-num="0"] {
-    order: 2;
-  }
-  
-  
+    background-color: rgba(0, 0, 0, .75);
+    color: #fff;
+}
+
+.group p {
+    padding-left: 10px;
+}

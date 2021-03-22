@@ -1,39 +1,127 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Calculator</title>
-  <meta name="description" content="Race00. Calculator<">
-  <link rel="stylesheet" href="css/style.css">
- </head>
- <body>
-    <div class="calculator">
-        <div class="calculator_top">
-          <div class="calculator_result">0</div>
-          <button class="calculator_clear" type="button" data-type="clear">C</button>
-        </div>
-        <div class="calculator_right">
-          <button class="calculator_operator calculator_operator--division" data-type="/">/</button>
-          <button class="calculator_operator calculator_operator--multiplication" data-type="*">*</button>
-          <button class="calculator_operator calculator_operator--substraction" data-type="-">-</button>
-          <button class="calculator_operator calculator_operator--addition" data-type="+">+</button>
-        </div>
-        <div class="calculator_main">
-          <button class="calculator_num" data-num="9">9</button>
-          <button class="calculator_num" data-num="8">8</button>
-          <button class="calculator_num" data-num="7">7</button>
-          <button class="calculator_num" data-num="6">6</button>
-          <button class="calculator_num" data-num="5">5</button>
-          <button class="calculator_num" data-num="4">4</button>
-          <button class="calculator_num" data-num="3">3</button>
-          <button class="calculator_num" data-num="2">2</button>
-          <button class="calculator_num" data-num="1">1</button>
-          <button class="calculator_num" data-num="0">0</button>
-          <button class="calculator_num" data-num=".">.</button>
-          <button class="calculator_is">=</button>
-        </div>
-      </div>
-      <script src="./js/script.js"></script>
- </body>
-</html>
+  <meta name="description" content="Race00. Calculator">
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+  <span id="custom-tooltip">copied!</span>
+  <div class="calculator-grid">
+    <div class="output">
+      <div data-previous-operand class="previous-operand"></div>
+      <div data-current-operand class="current-operand">0</div>
+    </div>
+    <button data-all-more>...</button>
+    <button data-all-clear>AC</button>
+    <button data-delete>DEL</button>
+    <button data-operation>÷</button>
+    <button data-number>1</button>
+    <button data-number>2</button>
+    <button data-number>3</button>
+    <button data-operation>*</button>
+    <button data-number>4</button>
+    <button data-number>5</button>
+    <button data-number>6</button>
+    <button data-operation>+</button>
+    <button data-number>7</button>
+    <button data-number>8</button>
+    <button data-number>9</button>
+    <button data-operation>-</button>
+    <button data-number>.</button>
+    <button data-number>0</button>
+    <button data-equals class="span-two">=</button>
+  </div>
+  <div class="calculator-grid more">
+    <button data-all-mc>MC</button>
+    <button data-all-mr>MR</button>
+    <button data-all-ms>MS</button>
+    <button data-all-mplus>M+</button>
+    <button data-all-mminus>M-</button>
+    <button data-all-mmult>M*</button>
+    <button data-all-sqrt>√x</button>
+    <button data-all-factorial>x!</button>
+    <button data-all-power>xˆ</button>
+    <button data-all-percent>%</button>
+    <button data-all-pm>+/-</button>
+    <button data-all-kg><img src="./assets/images/lg.svg"></button>
+    <button data-all-ruler><img src="./assets/images/ruler.svg"></button>
+    <button data-all-area><img src="./assets/images/area.svg"></button>
+  </div>
 
+  <div class="kg-display">
+    <div class="group">
+      <div>Grams:</div>
+      <input type="number" class="kg-input" min="0" id="kg" placeholder="0">
+    </div>
+    <div class="kg-results">
+      <div class="group">
+          <div>Kilograms:</div>
+          <p class="grams_val">0</p>
+      </div>
+      <div class="group">
+          <div>Pounds:</div>
+          <p class="kg_val">0</p>
+      </div>
+      <div class="group">
+          <div>Ounces:</div>
+          <p class="ounces_val">0</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="length-display">
+    <div class="group">
+        <div>Feet:</div>
+        <input type="number" class="length-input" min="0" id="foot" placeholder="0">
+    </div>
+    <div class="length-results">
+      <div class="group">
+        <div>Meters:</div>
+        <p class="meters_val">0</p>
+      </div>
+      <div class="group">
+        <div>Inches:</div>
+        <p class="cm_val">0</p>
+      </div>
+      <div class="group">
+        <div>Yards:</div>
+        <p class="yards_val">0</p>
+      </div>
+      <div class="group">
+        <div>Kilometers:</div>
+        <p class="km_val">0</p>
+      </div>
+      <div class="group">
+        <div>Miles:</div>
+        <p class="miles_val">0</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-display">
+    <div class="group">
+        <div>Square meters:</div>
+        <input type="number" class="area-input" min="0" placeholder="0">
+    </div>
+    <div class="area-results">
+      <div class="group">
+          <div>Square cm:</div>
+          <p class="sq_cm_val">0</p>
+      </div>
+      <div class="group">
+        <div>Square km:</div>
+        <p class="sq_km_val">0</p>
+    </div>
+    <div class="group">
+        <div>Hectare:</div>
+        <p class="hectare_val">0</p>
+    </div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
