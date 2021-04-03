@@ -1,47 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>A new set</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Marvel API</title>
 </head>
 
 <body>
-    <h1>New Avenger application</h1>
-    <div style="height: 200px; border: 2px solid gray; background-color: darkgray; margin-bottom: 20px; padding: 10px 10px 10px 40px;">
-        <p>POST</p>
-        <?php
-        $arr = [
-            "name" => $_POST["name"],
-            "email" => $_POST["email"],
-            "age" => $_POST["age"],
-            "description" => $_POST["message"],
-            "photo" => $_POST["photo"]
-        ];
-        if($arr["name"]) {
-            echo "<pre>";
-            print_r ($arr);
-            echo "</pre>";
+    <h1 class="main_header">Comics from Marvel API</h1>
+    <?php
+    $ts = time();
+    $public_key = "16d80e521d6fdfbc1de069743e6da95b";
+    $private_key = "a6e63735ae281351e820f8387bc7b537b5923f90";
+    $call = "http://gateway.marvel.com/v1/public/comics?ts=".$ts."&apikey=".$public_key."&hash=".md5($ts.$private_key.$public_key);
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $call);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    $json = curl_exec($curl);
+    curl_close($curl);
+
+    echo(parse_first_json(json_decode($json, true)));
+
+    $iter = 0;
+    $updated_json = json_decode($json, true);
+    foreach ($updated_json as $k => $v) {
+        if($iter < 6) {
+            unset($updated_json[$k]);
+            $iter++;
         }
-        ?>
-    </div>
-    <form action="index.php" method="post" style="border: 1px solid black; padding: 40px 20px 30px;">
-        <fieldset>
-            <legend>About candidate</legend>
-            <label for="name">Name</label>
-            <input name="name" id="name" type = "text" placeholder="Tell your name">
-            <label for="email">E-mail</label>
-            <input name="email" id="email" type = "text" placeholder="Tell your email">
-            <label for="age">Age</label>
-            <input name="age" id="age" type = "number" step = "1" min="1" max="999"><br>
-            <label for="tarea">About</label>
-            <textarea id = "tarea" name = "message" rows="5" cols="70" maxlength="500" placeholder="Tell about yourself, max 500 symbols"></textarea><br>
-            <label for="photo">Your photo:</label>
-            <input name="photo" id = "photo" type = "file">
-        </fieldset>
-        <input type="reset" value="Clear">
-        <input type="submit" value="Send">
-    </form>
+        else break;
+    }
+
+    echo(parse_json($updated_json));
+    
+    function parse_first_json($json) {
+        $iter = 0;
+        $page = '';
+        foreach ($json as $k => $v) {
+            if($iter < 6) {
+                $page .= "<div class=\"line\"> <span class=\"key\">$k: </span> <span class=\"value\">$v</span> </div>";
+                $iter++;
+            }
+            else break;
+        }
+        return $page."</div>";
+    }
+    
+    function parse_json($json) {
+        $page = '<div class="block">';
+        foreach ($json as $k => $v) {
+            if (is_array($v)) {
+                $page .= "<span class=\"header\"><br>$k:</span>";
+                $page .= parse_json($v);
+            } else {
+                $page .= "<div class=\"line\"> <span class=\"key\">$k: </span> <span class=\"value\">$v</span> </div>";
+            }
+        }
+        return $page."</div>";
+    }
+    ?>
 </body>
 
 </html>

@@ -1,0 +1,24 @@
+.block {
+    padding: 10px;
+    background: rgb(63, 63, 63);
+    color: whitesmoke;
+}
+div {
+    background: #191A25;
+    border: 2px solid #C94239;
+    padding: 8px;
+    margin: 5px;
+}
+.header {
+    color: whitesmoke;
+    font-weight: bold;
+}
+.line {
+    border-bottom: 1px solid lightgray;
+}
+.key {
+    color: rgb(0, 174, 255);
+}
+.value {
+    color: rgb(49, 117, 49);
+}

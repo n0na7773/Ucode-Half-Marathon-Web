@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+form > input {
+    margin: 5px;
+}
+
+img {
+    width: 800px;
+    height: 800px;
+}

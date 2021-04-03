@@ -1,5 +1,6 @@
 <?php
-    session_start(); 
+session_start();
+if(isset($_POST['forget_btn'])) session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,20 +16,22 @@
 
 <body>
     <h1>Session for new</h1>
-    <fieldset style = "padding: 20px;">
-        <form class = "form1" method="post">
+    <fieldset style = "padding: 20px;" <?php
+            if (isset($_POST['submit_btn'])) echo ' hidden'; else echo ' visible';?>>
+        <form class = "form1" action="index.php" method="post"<?php
+            if (isset($_POST['submit_btn'])) echo ' hidden'; else echo ' visible';?>>
             <fieldset style = "padding: 20px;">
                 <legend>About the Superhero</legend>
                 <label for="rname">Real Name</label>
-                <input id="rname" type = "text" placeholder="Superhero real name">
+                <input name="rname" id="rname" type = "text" placeholder="Superhero real name">
                 <label for="alname">Superhero Name</label>
-                <input id="alname" type = "text" placeholder="Superhero alias">
+                <input name="alname" id="alname" type = "text" placeholder="Superhero alias">
                 <label for="age">Age</label>
-                <input id="age" type = "number" step = "1" min="1" max="999"><br>
+                <input name="age" id="age" type = "number" step = "1" min="1" max="999"><br>
                 <label for="tarea">About</label>
                 <textarea id = "tarea" name = "message" rows="5" cols="70" maxlength="500" placeholder="Information about the superhero, max 500 symbols"></textarea><br>
                 <label for="photo">Photo:</label>
-                <input id = "photo" type = "file">
+                <input name = "photo" id = "photo" type = "file">
             </fieldset>
             <fieldset style = "padding: 20px;">
                 <legend>Powers</legend>
@@ -49,26 +52,53 @@
             </fieldset>
             <fieldset style = "padding: 20px;margin-bottom:10px;">
                 <legend>Origin of Powers</legend>
-                <input type="radio" id="unknown" name="unknown" value="unknown">
+                <input type="radio" id="unknown" name="origin" value="unknown">
                 <label for="unknown">Unknown</label>
-                <input type="radio" id="accident" name="accident" value="accident">
+                <input type="radio" id="accident" name="origin" value="accident">
                 <label for="accident">Freak lab accident</label>
-                <input type="radio" id="ancient" name="ancient" value="ancient">
+                <input type="radio" id="ancient" name="origin" value="ancient">
                 <label for="ancient">Chosen by ancient wise being</label>
-                <input type="radio" id="nothuman" name="nothuman" value="nothuman">
+                <input type="radio" id="nothuman" name="origin" value="nothuman">
                 <label for="nothuman">The superhero is not human</label>
-                <input type="radio" id="other" name="other" value="other">
+                <input type="radio" id="other" name="origin" value="other">
                 <label for="other">Other</label>
             </fieldset>
             <input type="reset" value="Clear">
             <input type="submit" value="Send" name="submit_btn">
         </form>
     </fieldset>
-    <?php
-    if (isset($_POST['submit_btn'])) {
-        echo ' hidden';
-    }
-    ?>
+    <form class = "form2" action="index.php" method="post" <?php
+        if (!isset($_POST['submit_btn'])) echo ' hidden'; else echo ' visible';?>>
+        <fieldset style="padding-left: 40px;">
+        <?php
+        if(isset($_POST['submit_btn'])) {
+            $arr = [
+                "name" => $_POST["rname"] ? $_POST["rname"] : "No name",
+                "alias" => $_POST["alname"] ? $_POST["alname"] : "No alias",
+                "age" => $_POST["age"] ? $_POST["age"] : "Unknown",
+                "description" => $_POST["message"] ? $_POST["message"] : "No description",
+                "strength" => $_POST["power1"] ? "+" : "-",
+                "speed" => $_POST["power2"] ? "+" : "-",
+                "intelligence" => $_POST["power3"] ? "+" : "-",
+                "teleportation" => $_POST["power4"] ? "+" : "-",
+                "immortal" => $_POST["power5"] ? "+" : "-",
+                "another" => $_POST["power6"] ? "+" : "-",
+                "level" => $_POST["range1"] ? $_POST["range1"] : "",
+                "origin" => $_POST["origin"] ? $_POST["origin"] : "Unknown",
+            ];
+            $_SESSION["submitted"] = $arr;
+            if($_SESSION["submitted"]) {
+                foreach($_SESSION["submitted"] as $key => $value) {
+                    echo $key.": ".$value."<br>";
+                }
+            }
+        }
+        ?>
+        </fieldset>
+        <fieldset style = "padding:20px;margin-top:10px;">
+            <input type="submit" value="Forget" name="forget_btn">
+        </fieldset>
+    </form>
 </body>
 
 </html>

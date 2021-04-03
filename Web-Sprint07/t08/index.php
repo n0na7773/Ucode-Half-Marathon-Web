@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>LilQuiz</title>
+    <title>Show other sites</title>
 </head>
 
 <body>
-    <h1>What Thanos did for the Soul Stone?</h1>
     <form action="index.php" method="post">
-        <input class="radio" type="radio" name="answer" value="1">Jumped from the mountain</input><br>
-        <input class="radio" type="radio" name="answer" value="2">Made stone keeper to jump from the mountain</input><br>
-        <input class="radio" type="radio" name="answer" value="3">Pushed Gamora off the mountain</input><br>
-        <br>
-        <input type="submit" value="I made a choice!"></input>
-        <br>
+        <input type="url" name="url" placeholder="url">
+        <input type="submit" value="Go">
+        <a href="" name="back">BACK</a>
     </form>
-    <p>
-        <?php
-        $temp = $_POST["answer"];
-        if (empty($temp)) echo "<p>Select something!</p>";
+    <?php
+        if($_POST['url']) {
+            echo $_POST['url'].'<br><br>';
+            $body_inner_html = file_get_contents($_POST['url']);
+            $body_inner_html = explode("<body", $body_inner_html)[1];
+            $body_inner_html = explode("</body>", $body_inner_html)[0];
+            $body_inner_html = "<body".$body_inner_html."</body>";
+            $body_inner_html = str_replace("<", "&lt;", $body_inner_html);
+            $body_inner_html = str_replace(">", "&gt;", $body_inner_html);
+            $body_inner_html = nl2br($body_inner_html);
+            echo $body_inner_html;
+        } 
         else {
-            if($temp != "3") echo "<p>Shame on you! Go and watch Avengers</p>";
-            else echo "<p>You are a real fan of Avengers!</p>";
+            echo "<p>Type an URL...</p>";
         }
-        ?>
-    </p>
+    ?>
 </body>
 
 </html>
