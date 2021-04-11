@@ -15,16 +15,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.login_page, .logout_page {
 
-button {
-    padding: 2.5% 5.5%;
-    border: none;
-    border-radius: 8px;
-    background-color: #449DF2;
-    color: white;
-}
-
-.form {
     display: flex;
     flex-direction: column;
     padding: 5%;
@@ -36,7 +28,16 @@ button {
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.form span {
+
+button {
+    padding: 2.5% 5.5%;
+    border: none;
+    border-radius: 8px;
+    background-color: #449DF2;
+    color: white;
+}
+
+form span {
     font-weight: 400;
     font-size: 1em;
     text-align: start;
@@ -44,7 +45,7 @@ button {
     color: rgb(15, 39, 107);
     margin: 3%;
 }
-.form input {
+form input {
     background-color: white;
     border: none;
     border-radius: 5px;
@@ -55,11 +56,22 @@ span {
     margin-top: 5px;
     padding-left: 3px;
 }
-#error_password, #error_user_exist {
+#error{
     color: rgb(255, 0, 0);
     text-align: center;
 }
-#user_added {
+.status {
+    margin-bottom: 15px;
+}
+
+.user {
     color:rgb(0, 96, 221);
-    text-align: center;
+}
+
+.admin {
+    color:rgb(206, 123, 0);
+}
+
+.hidden {
+    display: none;
 }

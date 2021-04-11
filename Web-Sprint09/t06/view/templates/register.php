@@ -1,20 +1,9 @@
 <?php
-session_start();
-include 'connection/DatabaseConnection.php';
 $_SESSION['error_user_exist'] = '';
 if(isset($_POST['create_btn'])) {
     save_user($_POST['login'], $_POST['password'], $_POST['name'], $_POST['email']);
 }
-function save_user($login, $password, $name, $email) {
-    $db_conn = new DatabaseConnection('127.0.0.1', NULL, 'irazumeyko', 'securepass', 'sword');
-    $sql = "INSERT INTO `users` (`LOGIN`, `PASSWORD`, `NAME`, `EMAIL`) 
-            VALUES (\"$login\", \"$password\", \"$name\", \"$email\")";
-    if(!$db_conn->conn->query($sql)) $_SESSION['error_user_exist'] = 'Error! That User exist!';
-    else $_SESSION['user_added'] = 'Welcome, new User!';
-    session_destroy();
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +16,7 @@ function save_user($login, $password, $name, $email) {
 
 <body>
     <div class="main" >
-        <form class="form" action="index.php" method="post">
+        <form class="register_page" action="index.php" method="post">
             <span>Login:</span>
             <input name="login" type="text" placeholder="Type something">
             <span>Password:</span>
