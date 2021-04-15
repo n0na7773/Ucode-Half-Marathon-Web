@@ -1,0 +1,74 @@
+body {
+    background-image: url("../img/board.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: 100%;
+    background-position: top;
+    background-color: black;
+}
+
+.top,
+.bottom {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50%;
+}
+.avatar {
+    height: 100px;
+}
+.avatar-wrapper {
+    margin-left: 47.5%;
+}
+.top-nickname {
+    margin-top: 0%;
+    font-size: 25px;
+    color: orange;
+}
+
+.top-hp {
+    margin-left: 4%;
+    margin-top: 3.5%;
+    font-size: 40px;
+    color: white;
+}
+
+.top-stones {
+    font-size: 40px;
+    color: orange;
+    margin-left: 23%;
+    margin-top: 0%;
+}
+
+.bottom {
+    margin-top: 28%;
+}
+.bottom-nickname {
+    margin-top: 15%;
+    font-size: 25px;
+    color: orange;
+}
+.bottom-avatar {
+    height: 100px;
+    margin-top: -4%;
+    font-size: 80px;
+    color: orange;
+}
+.bottom-hp {
+    margin-left: 4%;
+    margin-top: 2%;
+    font-size: 40px;
+    color: white;
+}
+
+.bottom-stones {
+    font-size: 40px;
+    color: orange;
+    margin-left: 23%;
+    margin-top: 6%;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

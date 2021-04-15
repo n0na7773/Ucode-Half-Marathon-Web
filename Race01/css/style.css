@@ -1,0 +1,158 @@
+@import url(//db.onlinewebfonts.com/c/d240bdb976394213f6f34c47042a4ca7?family=Belwe+Bd+BT);
+*:focus {
+  outline: none;
+}
+body {
+  background: white;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1400px;
+  height: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.board {
+  display: flex;
+  flex-direction: column;
+  width: 1400px;
+  height: 800px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../img/board.jpg");
+  background-size: 100% 100%;
+}
+.top, .middle, .bottom {
+  display: flex;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+  .avatar {
+    height: 100px;
+  }
+  .nickname {
+    font-family: "Belwe Bd BT";
+    margin: 0;
+    font-size: 20px;
+    color: orange;
+  }
+.hp-top {
+  font-family: "Belwe Bd BT";
+  position: absolute;
+  right: 542px;
+  top: 63px;
+  font-size: 40px;
+  color: white;
+}
+.stones-top {
+  font-family: "Belwe Bd BT";
+  position: absolute;
+  right: 80px;
+  top: -4px;
+  font-size: 40px;
+  color: orange;
+}
+.hp-bottom {
+  font-family: "Belwe Bd BT";
+  position: absolute;
+  right: 542px;
+  bottom: 79px;
+  font-size: 40px;
+  color: white;
+}
+.stones-bottom {
+  font-family: "Belwe Bd BT";
+  position: absolute;
+  right: 80px;
+  bottom: 0px;
+  font-size: 40px;
+  color: orange;
+}
+.middle {
+  flex-direction: column;
+  height: 100%;
+  padding: 8px 0px;
+}
+.middle-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(243, 36, 40, 0.49);
+}
+.middle-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(153, 243, 36, 0.49);
+}
+
+.card {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  background-image: url("../cards/1.png");
+  background-size: 100% 100%;
+  margin: 0px 10px;
+}
+.hand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 450px;
+  height: 150px;
+  margin: 0px 10px;
+  margin-left: 30px;
+}
+.bottom .hand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 450px;
+  height: 150px;
+  margin: 0px 10px;
+  bottom: 0;
+  margin-left: 30px;
+}
+.hand .card {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  background-image: url("../cards/6.png");
+  background-size: 100% 100%;
+  margin: 0px -4%;
+}
+.bottom .hand .card:hover {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  background-image: url("../cards/6.png");
+  background-size: 100% 100%;
+  margin: 0px -4%;
+  bottom: 20px;
+  z-index: 1;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkcyan;
+  padding: 10px;
+}
+.end_btn {
+  padding: 10px;
+  background-color: goldenrod;
+}
