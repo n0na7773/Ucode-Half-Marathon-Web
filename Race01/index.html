@@ -1,47 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Marvel Game</title>
+  <title>Registration Page</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 </head>
 
 <body>
-    <div class="main">
-        <div class="board">
-            <div class="top">
-                <div class="hand" id="enemy_hand">
-                </div>
-                <div class="user">
-                    <img src="img/ava.png" class="avatar" alt="Avatar">
-                    <span class="nickname">nickname</span>
-                </div>
-                <span class="hp-top">20</span>
-                <span class="stones-top"><span id="enemy_mana"></span>/6</span>
-            </div>    
-            <div class="middle" id="middle">
-                <div class="middle-top">
-                </div> 
-                <div class="middle-bottom" id="middle-bottom">
-                </div> 
-            </div>   
-            <div class="bottom">
-                <div class="hand" id="player_hand">
-                </div>
-                <div class="user">
-                    <span class="nickname">nickname</span>
-                    <img src="img/ava.png" class="avatar" alt="Avatar">
-                </div>
-                <span class="hp-bottom">20</span>
-                <span class="stones-bottom"><span id="player_mana"></span>/6</span>
+  <div class="container">
+    <div class="row col-md-6 col-md-offset-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+          <h1>Card Game</h1>
+          <h4>Registration Form</h4>
+        </div>
+        <div class="panel-body">
+          <form action="connect.php" method="post">
+            <div class="form-group">
+              <label for="nickname">Nickname</label>
+              <input type="text" class="form-control" id="nickname" name="nickname" />
             </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" />
+
+
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" />
+            </div>
+
+            <input type="submit" class="btn btn-primary" />
+          </form>
         </div>
-        <div class="buttons">
-            <input class="end_btn" type="button" value="End turn" onclick="endTurn()"></input>
-        </div>
+      </div>
+      <div class="panel-footer text-right">
+        <small>&copy;vdovgotko irazumeyko</small>
+      </div>
     </div>
-    <script src="script.js"></script>
+  </div>
+  </div>
+
+  </div>
 </body>
+
 </html>
